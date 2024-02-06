@@ -1,0 +1,110 @@
+City,City,Country,Lat,Lng,Humidity,Hotel
+0,avarua,CK,-21.2078,-159.775,78,Paradise Inn
+1,hell-ville,MG,-13.4,48.2667,78,ABUD HOTEL
+2,san luis de la loma,MX,17.2706,-100.8939,72,No hotel found
+3,bumba,CD,2.1833,22.4667,49,Hotel Bumba
+4,beau vallon,MU,-20.4189,57.6953,78,Le Jardin de Beau Vallon
+5,hawaiian paradise park,US,19.5933,-154.9731,76,No hotel found
+6,touros,BR,-5.1989,-35.4608,61,Pousada Atlântico
+7,prado,BR,-17.3411,-39.2208,67,Pousada Recanto do Prado
+8,kingston,JM,17.997,-76.7936,59,Aphrodite Hotel
+9,afaahiti,PF,-17.75,-149.2833,76,Omati Lodge
+10,san antonio de pale,GQ,-1.4014,5.6325,77,No hotel found
+11,tazacorte,ES,28.629,-17.9293,52,App Leyma
+12,guadalupe,MX,25.6833,-100.25,51,Hotel Ejecutivo
+13,holualoa,US,19.6228,-155.9522,66,Kona Hotel
+14,valparaiso,CL,-33.0393,-71.6273,66,Ibis Hotel
+15,kollo,NE,13.3043,2.339,18,No hotel found
+16,taoudenni,ML,22.6783,-3.9836,15,No hotel found
+17,tsiombe,MG,-25.3,45.4833,76,No hotel found
+18,arlington,US,32.7357,-97.1081,34,Parkway Inn
+19,tolanaro,MG,-25.0319,46.9987,78,Hôtel Mahavokey
+20,san pedro pochutla,MX,15.7333,-96.4667,43,Olimpia
+21,sao jose da coroa grande,BR,-8.8978,-35.1478,71,Hotel do Sol
+22,souillac,MU,-20.5167,57.5167,78,Hotel SkylineInn
+23,sao vicente,BR,-23.9631,-46.3919,57,Pousada Vitória
+24,portel,BR,-1.9356,-50.8211,77,No hotel found
+25,el nido,PH,11.1858,119.3956,79,Dragonfly
+26,hilo,US,19.7297,-155.09,73,Dolphin Bay Hotel
+27,port isabel,US,26.0734,-97.2086,70,Queen Isabel Inn
+28,mora,CM,11.0461,14.1401,19,Hôtel Podoko
+29,carauari,BR,-4.8828,-66.8958,68,No hotel found
+30,namibe,AO,-15.1961,12.1522,78,Hotel Chik Chik Namibe
+31,santa elena de uairen,VE,4.6167,-61.1333,52,Posada Villa Fairmont
+32,san patricio,US,28.017,-97.5169,58,No hotel found
+33,cabo san lucas,MX,22.8909,-109.9124,65,Comfort Rooms
+34,olinda,BR,-8.0089,-34.8553,74,Fidji Motel
+35,ouesso,CG,1.6136,16.0517,41,Auberge Nianina
+36,puerto santa,PE,-8.9906,-78.6456,76,No hotel found
+37,esuk oron,NG,4.8029,8.2534,76,No hotel found
+38,ugoofaaru,MV,5.6667,73.0,76,No hotel found
+39,tual,ID,-5.6667,132.75,79,Suita
+40,laascaanood,SO,8.4774,47.3597,21,Warsame Hotel mnesta
+41,sabang,ID,5.8933,95.3214,79,Sabang Hill
+42,sao sebastiao,BR,-23.76,-45.4097,79,Hotel Arrastão
+43,papao,PF,-17.75,-149.55,75,Hiti Moana Villa Lodge
+44,wagar,SD,16.1525,36.2032,13,No hotel found
+45,santa isabel,BR,-23.3156,-46.2214,76,No hotel found
+46,alvaraes,BR,-3.2208,-64.8042,76,Hotel Divino
+47,harper,LR,4.375,-7.7169,77,No hotel found
+48,el porvenir,HN,13.7617,-87.3458,30,No hotel found
+49,belmonte,BR,-15.8631,-38.8828,60,No hotel found
+50,betio village,KI,1.358,172.9211,76,Seaman Hostel
+51,tannum sands,AU,-23.9504,151.3693,78,No hotel found
+52,savannakhet,LA,16.566,104.751,53,Lotus Hotel
+53,cockburn town,TC,21.4612,-71.1419,61,The Salt Raker Inn
+54,san lorenzo de esmeraldas,EC,1.2883,-78.8369,77,Gran Hotel San Carlo
+55,biltine,TD,14.5333,20.9167,17,فندق ثلاث نجوم بلتن
+56,hobyo,SO,5.3505,48.5268,73,Iftin Hotel Hobyo
+57,cidreira,BR,-30.1811,-50.2056,68,Hotel Castelo
+58,kailua-kona,US,19.6406,-155.9956,64,Kona Seaside Hotel
+59,chonchi,CL,-42.6128,-73.8092,49,Hotel Huildín
+60,itamaraca,BR,-7.7478,-34.8256,68,No hotel found
+61,alice springs,AU,-23.7,133.8833,21,Aurora Alice Springs
+62,ilhabela,BR,-23.7781,-45.3581,79,Vila Kebaya
+63,sarmiento,AR,-45.5882,-69.07,25,Ismar
+64,buenaventura,CO,3.8801,-77.0312,77,Hotel Steven Buenaventura
+65,andrelandia,BR,-21.7397,-44.3092,75,No hotel found
+66,indiantown,US,27.0273,-80.4856,68,Seminole Inn
+67,villa gesell,AR,-37.2639,-56.973,66,Hotel El Faro
+68,huarmey,PE,-10.0681,-78.1522,72,Hostal Santa Rosa
+69,minas de marcona,PE,-15.2119,-75.1103,59,No hotel found
+70,hithadhoo,MV,-0.6,73.0833,74,Pebbles Inn
+71,arraial do cabo,BR,-22.9661,-42.0278,74,No hotel found
+72,balabac,PH,7.9868,117.0645,76,No hotel found
+73,hadibu,YE,12.65,54.0333,74,No hotel found
+74,santa cruz,BO,-17.8,-63.1667,73,Aviador Hotel Boutique
+75,cumana,VE,10.4635,-64.1775,74,Hotel Regina
+76,daura,NG,11.5538,11.4085,21,No hotel found
+77,uturoa,PF,-16.7333,-151.4333,72,Hawaiki Nui hotel
+78,geraldton,AU,-28.7667,114.6,34,Ocean Centre Hotel
+79,el fuerte,MX,26.4189,-108.6194,28,Hotel Haciencda Santa Cruz
+80,raja,SS,8.4596,25.678,18,No hotel found
+81,playa del ingles,ES,27.7567,-15.5787,30,Apartamentos Barbados
+82,la libertad,EC,-2.2333,-80.9,70,Hotel Mar Caribe
+83,caleta de carquin,PE,-11.0925,-77.6267,74,Hotel Mi Choacan
+84,mana,GF,5.6592,-53.7767,59,Le Samana
+85,tombodu,SL,8.1333,-10.6167,44,No hotel found
+86,rosso,SN,16.4986,-15.8153,9,نزل صانتر روصو
+87,kankanhalli,IN,12.55,77.4167,49,No hotel found
+88,bel ombre,SC,-4.6167,55.4167,79,Villa La Cachette
+89,san ignacio,BZ,17.1561,-89.0714,73,Rainforest Haven Inn
+90,las khorey,SO,11.1595,48.1967,73,No hotel found
+91,san juan de miraflores,PE,-12.1629,-76.9635,75,Venue Hospedaje
+92,new yekepa,LR,7.5794,-8.5378,27,Institut de Recherche Environnementalde Bossou
+93,arraias,BR,-12.9288,-46.9437,74,Hotel Japão
+94,buulobarde,SO,3.8538,45.5674,73,No hotel found
+95,nouadhibou,MR,20.931,-17.0347,16,Hotel valencia
+96,san pedro de macoris,DO,18.4616,-69.2972,69,No hotel found
+97,jikamshi,NG,12.1733,7.7742,17,No hotel found
+98,puerto deseado,AR,-47.7503,-65.8938,30,Los Olmos
+99,ixtapa,MX,20.7,-105.2,61,Ma. Cristina
+100,bardai,NG,11.65,7.2333,18,No hotel found
+101,sanibel,US,26.449,-82.0223,52,Sanibel Moorings
+102,ambovombe,MG,-25.1667,46.0833,78,La source
+103,basoko,CD,1.2391,23.616,53,No hotel found
+104,al ghayzah,YE,16.2079,52.176,78,فندق تاج العرب
+105,al qadarif,SD,14.0349,35.3834,12,No hotel found
+106,yaren,NR,-0.5472,166.916,73,Aiwo Hotel
+107,am timan,TD,11.0297,20.2827,17,Nimla
+108,kapoeta,SS,4.7717,33.5903,50,Kuleu
