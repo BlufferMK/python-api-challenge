@@ -1,10 +1,3 @@
-# %% [markdown]
-# # VacationPy
-# ---
-# 
-# ## Starter Code to Import Libraries and Load the Weather and Coordinates Data
-
-# %%
 # Dependencies and Setup
 import hvplot.pandas
 import pandas as pd
@@ -18,20 +11,17 @@ from api_keys import geoapify_key
 
 import pycountry
 
-# %%
-# Load the CSV file created in Part 1 into a Pandas DataFrame
+
+# Load the CSV file created in WeatherPy.py into a Pandas DataFrame
 city_data_df = pd.read_csv("output_data/cities.csv")
 
 # Display sample data
 city_data_df.head()
 
-# %% [markdown]
-# ---
-# 
-# ### Step 1: Create a map that displays a point for every city in the `city_data_df` DataFrame. The size of the point should be the humidity in each city.
 
-# %%
-%%capture --no-display
+# ### Create a map that displays a point for every city in the `city_data_df` DataFrame. 
+# The size of the point relates to the humidity in each city.
+
 
 # Configure the map plot
 map_plot = city_data_df.hvplot.points(
@@ -52,23 +42,19 @@ map_plot = city_data_df.hvplot.points(
 # Display the map
 map_plot
 
-# %% [markdown]
-# ### Step 2: Narrow down the `city_data_df` DataFrame to find your ideal weather condition
 
-# %%
 # Narrow down cities that fit criteria and drop any results with null values
-ideal_city_df = city_data_df.loc[(city_data_df['Max Temp']>22)&(city_data_df['Max Temp']<30)&(city_data_df['Humidity']<80),:]
+ideal_city_df = city_data_df.loc[(city_data_df['Max Temp']>22)&
+                                 (city_data_df['Max Temp']<30)&
+                                 (city_data_df['Humidity']<80),:]
 
 # Drop any rows with null values
 ideal_city_df=ideal_city_df.dropna(how='any')
 # Display sample data
 ideal_city_df
 
-# %% [markdown]
-# ### Step 3: Create a new DataFrame called `hotel_df`.
 
-# %%
-# Use the Pandas copy function to create DataFrame called hotel_df to store the city, country, coordinates, and humidity
+# Create a new DataFrame called `hotel_df` to store the city, country, coordinates, and humidity
 hotel1_df = ideal_city_df[["City","Country","Lat","Lng","Humidity"]]
 
 # Add an empty column, "Hotel Name," to the DataFrame so you can store the hotel found using the Geoapify API
@@ -79,17 +65,15 @@ hotel_df = hotel1_df.reset_index(drop=True)
 
 hotel_df
 
-# %% [markdown]
-# ### Step 4: For each city, use the Geoapify API to find the first hotel located within 10,000 metres of your coordinates.
 
-# %%
+# For each city, use the Geoapify API to find the first hotel located within 10,000 metres of your coordinates.
+
 # Set parameters to search for a hotel
 latitude = []
 longitude = []
 
 radius = 10000
 limit = 1
-
 
 params = params = {
     "limit":limit,
@@ -133,19 +117,15 @@ for index, row in hotel_df.iterrows():
 # Display sample data
 hotel_df
 
-# %% [markdown]
-# ### Step 5: Add the hotel name and the country as additional information in the hover message for each city in the map.
 
-# %%
+# Add the hotel name and the country as additional information in the hover message for each city in the map.
+
+
 hotel_df.to_csv("output_data/hotels.csv", index_label="City")
 
-# %%
 hotel_df = pd.read_csv("output_data/hotels.csv", index_col="City")
 
 hotel_df.head(30)
-
-# %%
-%%capture --no-display
 
 # Configure the map plot
 map_plot_1 = hotel_df.hvplot.points(
@@ -162,11 +142,9 @@ map_plot_1 = hotel_df.hvplot.points(
     legend = False
 )
 
-
 # Display the map
 map_plot_1
 
-# %%
 
 
 

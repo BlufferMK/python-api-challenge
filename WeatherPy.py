@@ -1,11 +1,3 @@
-# %% [markdown]
-# # WeatherPy
-# 
-# ---
-# 
-# ## Starter Code to Generate Random Geographic Coordinates and a List of Cities
-
-# %%
 # Dependencies and Setup
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -14,7 +6,7 @@ import requests
 import time
 from scipy.stats import linregress
 
-# Impor the OpenWeatherMap API key
+# Import the OpenWeatherMap API key
 from api_keys import weather_api_key
 
 # Import citipy to determine the cities based on latitude and longitude
@@ -22,10 +14,10 @@ from citipy import citipy
 
 import datetime
 
-# %% [markdown]
+
 # ### Generate the Cities List by Using the `citipy` Library
 
-# %%
+
 # Empty list for holding the latitude and longitude combinations
 lat_lngs = []
 
@@ -34,6 +26,8 @@ cities = []
 # Range of latitudes and longitudes
 lat_range = (-80, 80)
 lng_range = (-180, 180)
+# I used -80 to 80 as there are very few cities that are not in this range, 
+# and none are likely to be vacation destinations.
 
 # Create a set of random lat and lng combinations
 lats = np.random.uniform(lat_range[0], lat_range[1], size=1500)
@@ -52,7 +46,6 @@ for lat_lng in lat_lngs:
 print(f"Number of cities in the list: {len(cities)}")
 
 
-# %% [markdown]
 # # reduced number of cities for code development
 # # test code
 # count = 0
@@ -64,15 +57,10 @@ print(f"Number of cities in the list: {len(cities)}")
 # print(f"Number of cities in the smaller list: {len(cities)}")
 # 
 
-# %% [markdown]
-# ---
-
-# %% [markdown]
-# ## Requirement 1: Create Plots to Showcase the Relationship Between Weather Variables and Latitude
+# Create Plots to Showcase the Relationship Between Weather Variables and Latitude
 # 
-# ### Use the OpenWeatherMap API to retrieve weather data from the cities list generated in the started code
+# Use the OpenWeatherMap API to retrieve weather data from the cities list generated in the started code
 
-# %% [markdown]
 # # test code
 # 
 # url = "https://api.openweathermap.org/data/2.5/weather?"
@@ -86,7 +74,7 @@ print(f"Number of cities in the list: {len(cities)}")
 # 
 # city_weather
 
-# %%
+
 # Set the API base URL
 url = "https://api.openweathermap.org/data/2.5/weather?"
 
@@ -159,102 +147,83 @@ print("-----------------------------")
 print("Data Retrieval Complete      ")
 print("-----------------------------")
 
-# %%
+
 print(city_data)
 
-# %%
+
 # Convert the cities weather data into a Pandas DataFrame
 city_data_df = pd.DataFrame(city_data)
 
 # Show Record Count
 city_data_df.count()
 
-# %%
+
 # Display sample data
 city_data_df.head()
 
-# %%
+
 # Export the City_Data into a csv
 city_data_df.to_csv("output_data/cities.csv", index_label="City_ID")
 
-# %%
+
 # Read saved data
 city_data_df = pd.read_csv("output_data/cities.csv", index_col="City_ID")
 
 # Display sample data
 city_data_df.head()
 
-# %% [markdown]
-# ### Create the Scatter Plots Requested
-# 
+
+# ### Create the Scatter Plots
+
 # #### Latitude Vs. Temperature
 
-# %%
 city_data_df.dtypes
 
-# %%
 # Build scatter plot for latitude vs. temperature
 city_data_df.plot(kind="scatter", x="Lat", y="Max Temp", grid=True, figsize=(8,8),
-              title="City Max Temperature vs. Latitude (2024-2-1)",xlabel = "Latitude", ylabel = "Maximum Temperature (C)")
-plt.show()
-
-# Incorporate the other graph properties
-# YOUR CODE HERE
+              title="City Max Temperature vs. Latitude (2024-2-1)",xlabel = "Latitude", 
+              ylabel = "Maximum Temperature (C)")
+#plt.show()
 
 # Save the figure
-plt.savefig("output_data/Fig1.png")
+plt.savefig("output_data/TempvsLat.png")
 
 
-# %% [markdown]
 # #### Latitude Vs. Humidity
 
-# %%
 # Build the scatter plots for latitude vs. humidity
 city_data_df.plot(kind="scatter", x="Lat", y="Humidity", grid=True, figsize=(8,8),
               title="City Humidity(%) vs. Latitude (2024-2-1)",xlabel = "Latitude", ylabel = "Humidity (%)")
-plt.show()
+#plt.show()
 
 # Save the figure
-plt.savefig("output_data/Fig2.png")
+plt.savefig("output_data/HumvsLat.png")
 
-
-# %% [markdown]
 # #### Latitude Vs. Cloudiness
 
-# %%
 # Build the scatter plots for latitude vs. cloudiness
 city_data_df.plot(kind="scatter", x="Lat", y="Cloudiness", grid=True, figsize=(8,8),
               title="City Cloudiness vs. Latitude (2024-2-1)",xlabel = "Latitude", ylabel = "Cloudiness")
-plt.show()
-# Incorporate the other graph properties
-# YOUR CODE HERE
+#plt.show()
 
 # Save the figure
-plt.savefig("output_data/Fig3.png")
+plt.savefig("output_data/cloudsvsLat.png")
 
-# %% [markdown]
 # #### Latitude vs. Wind Speed Plot
 
-# %%
 # Build the scatter plots for latitude vs. wind speed
 city_data_df.plot(kind="scatter", x="Lat", y="Wind Speed", grid=True, figsize=(8,8),
               title="City Wind Speed vs. Latitude (2024-2-1)",xlabel = "Latitude", ylabel = "Wind Speed")
-plt.show()
-
-# Incorporate the other graph properties
-# YOUR CODE HERE
+#plt.show()
 
 # Save the figure
-plt.savefig("output_data/Fig4.png")
+plt.savefig("output_data/windvsLat.png")
 
 
-# %% [markdown]
-# ---
-# 
-# ## Requirement 2: Compute Linear Regression for Each Relationship
+
+# ## Compute Linear Regression for Each Relationship
 # 
 
-# %%
 # Define a function to create Linear Regression plots
 y_axis_columns = ['Max Temp',"Humidity","Cloudiness","Wind Speed"]
 
@@ -276,25 +245,20 @@ for y in range(4):
 
 
 
-# %%
 # Create a DataFrame with the Northern Hemisphere data (Latitude >= 0)
 northern_hemi_df = city_data_df.loc[city_data_df['Lat']>=0,:]
-
 
 # Display sample data
 northern_hemi_df
 
-# %%
 # Create a DataFrame with the Southern Hemisphere data (Latitude < 0)
 southern_hemi_df = city_data_df.loc[city_data_df['Lat']<0,:]
 
 # Display sample data
 southern_hemi_df.head()
 
-# %% [markdown]
 # ###  Temperature vs. Latitude Linear Regression Plot
 
-# %%
 # Linear regression on Northern Hemisphere
 x_values = northern_hemi_df['Lat']
 y_values = northern_hemi_df['Max Temp']
@@ -310,7 +274,6 @@ plt.show()
 print("The r-value is :", rvalue)
 
 
-# %%
 # Linear regression on Southern Hemisphere
 x_values = southern_hemi_df['Lat']
 y_values = southern_hemi_df['Max Temp']
@@ -325,17 +288,27 @@ plt.ylabel('Max Temp (C)')
 plt.show()
 print("The r-value is :", rvalue)
 
-# %% [markdown]
+
 # **Discussion about the linear relationship:** 
 # 
-# In the Northern Hemisphere, there is clearly some correlation between Latitude and Maximum Temperature for this date in February.  There is increased variability north of Latitude 30, however.  North of this latitude, the range of maximum temperatures for a given latitude increases dramatically.  It might be interesting to simply look at a regression for the tropical locations in the Northern Hemisphere.  I believe the r-value would be even closer to 1.
+# In the Northern Hemisphere, there is clearly some correlation between Latitude and Maximum Temperature 
+# for this date in February.  There is increased variability north of Latitude 30, however.  North of this 
+# latitude, the range of maximum temperatures for a given latitude increases dramatically.  It might be 
+# interesting to simply look at a regression for the tropical locations in the Northern Hemisphere.  
+# I believe the r-value would be even closer to 1.
 # 
-# For the Southern Hemisphere, the correlation is much less.  There are many cities in latitudes between -20 and -30 that show quite high temperatures.  This is perhaps unsurprising as the temperatures reflect summertime weather in these areas, somewhat distant from the equator where seasonal temperature differences would be expected.  Similarly, the temperatures in the southern hemisphere, even far from the equator show higher maximum temperatures than some places in the northern hemisphere.  It should also be noted that there are no cities randomly chosen that are further south than -60 latitude.  There are also quite a few fewer cities represented in the southern hemisphere.
+# For the Southern Hemisphere, the correlation is much less.  There are many cities in latitudes 
+# between -20 and -30 that show quite high temperatures.  This is perhaps unsurprising as the temperatures 
+# reflect summertime weather in these areas, somewhat distant from the equator where seasonal temperature 
+# differences would be expected.  Similarly, the temperatures in the southern hemisphere, even far from the 
+# equator show higher maximum temperatures than some places in the northern hemisphere.  
 
-# %% [markdown]
+# It should also be noted that there are no cities randomly chosen that are further south than -60 latitude.  
+# There are also quite a few fewer cities represented in the southern hemisphere.
+
+
 # ### Humidity vs. Latitude Linear Regression Plot
 
-# %%
 # Northern Hemisphere
 x_values = northern_hemi_df['Lat']
 y_values = northern_hemi_df['Humidity']
@@ -350,7 +323,6 @@ plt.ylabel('Humidity (%)')
 plt.show()
 print("The r-value is :", rvalue)
 
-# %%
 # Southern Hemisphere
 x_values = southern_hemi_df['Lat']
 y_values = southern_hemi_df['Humidity']
@@ -365,15 +337,20 @@ plt.ylabel('Humidity (%)')
 plt.show()
 print("The r-value is :", rvalue)
 
-# %% [markdown]
-# **Discussion about the linear relationship:** 
-# There is very little correlation between humidity and latitude for either the northern hemisphere of the southern hemisphere.  It appears that there is a very broad trend toward higher humidity nearer the equator, and lower humidity farther from the equator, but it is not useful for making predictions for any individual city.  The variability in humidity, especially at the higher latitudes, is quite high.  
-# One could say that there is a very good chance that the humidity will be above 60% for any city within 20 degrees of the equator, but there are many examples of cities for which this is still not true.   
 
-# %% [markdown]
+# **Discussion about the linear relationship:** 
+# There is very little correlation between humidity and latitude for either the northern hemisphere 
+# or the southern hemisphere.  It appears that there is a very broad trend toward higher humidity nearer 
+# the equator, and lower humidity farther from the equator, but it is not useful for making predictions 
+# for any individual city.  The variability in humidity, especially at the higher latitudes, is quite high. 
+ 
+# One could say that there is a very good chance that the humidity will be above 60% for any city within 
+# 20 degrees of the equator, but there are many examples of cities for which this is still not true.   
+
+
 # ### Cloudiness vs. Latitude Linear Regression Plot
 
-# %%
+
 # Northern Hemisphere
 x_values = northern_hemi_df['Lat']
 y_values = northern_hemi_df['Cloudiness']
@@ -388,7 +365,7 @@ plt.ylabel('Cloudiness')
 plt.show()
 print("The r-value is :", rvalue)
 
-# %%
+
 # Southern Hemisphere
 x_values = southern_hemi_df['Lat']
 y_values = southern_hemi_df['Cloudiness']
@@ -403,15 +380,17 @@ plt.ylabel('Cloudiness')
 plt.show()
 print("The r-value is :", rvalue)
 
-# %% [markdown]
+
 # **Discussion about the linear relationship:** 
 # 
-# There is essentially no relationship between latitude and cloudiness.  The r-values for both hemispheres are both well below 0.3.  There is a large amount of variability of cloudiness at the same latitude.  Cloudiness apparently depends much more heavily on factors other than latitude.
+# There is essentially no relationship between latitude and cloudiness.  The r-values for both hemispheres 
+# are both well below 0.3.  There is a large amount of variability of cloudiness at the same latitude.  
+# Cloudiness apparently depends much more heavily on factors other than latitude.
 
-# %% [markdown]
+
 # ### Wind Speed vs. Latitude Linear Regression Plot
 
-# %%
+
 # Northern Hemisphere
 x_values = northern_hemi_df['Lat']
 y_values = northern_hemi_df['Wind Speed']
@@ -426,7 +405,6 @@ plt.ylabel('Wind Speed')
 plt.show()
 print("The r-value is :", rvalue)
 
-# %%
 # Southern Hemisphere
 x_values = southern_hemi_df['Lat']
 y_values = southern_hemi_df['Wind Speed']
@@ -441,12 +419,16 @@ plt.ylabel('Wind Speed')
 plt.show()
 print("The r-value is :", rvalue)
 
-# %% [markdown]
+
 # **Discussion about the linear relationship:** 
 # 
-# There appears to be no real relationship between latitude and wind speed.  The wind speed varies greatly between 0 and 10 for all latitudes.  Wind speeds between 10 and 15 are present for nearly all latitudes, but are less prevalent close to the equator.  The largest wind speeds were for cities far from the equator.  Only one city in the northern hemisphere and one in the southern hemisphere had wind speed above 20.  Both of these cities are beyond 50 degrees North or South of the equator.
+# There appears to be no real relationship between latitude and wind speed.  The wind speed varies greatly 
+# between 0 and 10 for all latitudes.  Wind speeds between 10 and 15 are present for nearly all latitudes, 
+# but are less prevalent close to the equator.  The largest wind speeds were for cities far from the equator.  
+# Only one city in the northern hemisphere and one in the southern hemisphere had wind speed above 20.  Both 
+# of these cities are beyond 50 degrees North or South of the equator.
 
-# %%
+
 
 
 
