@@ -7,6 +7,6 @@ Visualizations were then created to ccompare weather conditions vs. Latitude and
 
 In the follow-up VacationPy.py file, the weather and location data were imported and the cities were mapped using hvplot.  Geoapify API was called to find the nearest hotel to each of the coordinates, and a new dataframe was created and exported to a csv file. Hotel names were added to the map upon hovering.
 
-
+![sample map](image.png)
 
 
